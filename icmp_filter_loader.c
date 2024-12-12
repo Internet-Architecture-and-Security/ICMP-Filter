@@ -9,8 +9,6 @@
 #include <unistd.h>
 #include <time.h>
 
-#define PATH_MAX 4096
-
 struct perdst_entry {
     long long credit;
     __u64 accum;
@@ -21,7 +19,6 @@ int main(int argc, char **argv) {
     struct bpf_object *obj;
     struct bpf_program *prog;
     struct bpf_link *link;
-    char filename[PATH_MAX];
     int ret;
 
     obj = bpf_object__open_file("icmp_filter.o", NULL);

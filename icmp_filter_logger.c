@@ -8,7 +8,7 @@
 #include <errno.h>
 
 struct log_event {
-    char ip[256];
+    char ip[20];
     __u8 type;
     __u64 timestamp;
 };
