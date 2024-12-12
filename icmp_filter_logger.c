@@ -58,7 +58,6 @@ int handle_event(void *ctx, void *data, size_t size) {
 
 int main() {
     struct ring_buffer *rb;
-    struct bpf_object *obj;
 
     int map_fd = bpf_obj_get("/sys/fs/bpf/icmp_filter_log_map");
     if (map_fd < 0) {
@@ -81,6 +80,5 @@ int main() {
     }
 
     ring_buffer__free(rb);
-    bpf_object__close(obj);
     return 0;
 }

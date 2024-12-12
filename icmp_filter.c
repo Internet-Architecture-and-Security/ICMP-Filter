@@ -128,7 +128,6 @@ int icmp_filter(struct bpf_nf_ctx *ctx) {
         __sync_add_and_fetch(&entry->credit, consume);
     }
 
-finish: 
     if (drop) {
         struct log_event event = {
             .type = 0,
